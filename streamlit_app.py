@@ -24,19 +24,24 @@ firebase_config = {
 
 # Inisialisasi Firebase (Realtime DB & Auth)
 try:
-    if 'firebase_admin' in st.secrets:
-        # Gunakan st.secrets untuk otorisasi Admin SDK
-        cred = credentials.Certificate(dict(st.secrets["firebase_admin"]))
+    firebase = pyrebase.initialize_app(firebase_config)
+    auth = firebase.auth()
+
+    # Inisialisasi Admin SDK
+    service_account_path = "tubescd-firebase-adminsdk-fbsvc-068c9c7bcb.json"
+    if os.path.exists(service_account_path):
+        cred = credentials.Certificate(service_account_path)
         if not firebase_admin._apps:
             firebase_admin.initialize_app(cred, {
                 'databaseURL': 'https://tubescd-default-rtdb.asia-southeast1.firebasedatabase.app/'
             })
     else:
         if not firebase_admin._apps:
-            st.warning("⚠️ Kunci Firebase Admin SDK tidak ditemukan di st.secrets. Fitur database Admin SDK mungkin terganggu.")
-            pass
+             st.warning(f"⚠️ File service account '{service_account_path}' tidak ditemukan. Fitur database Admin SDK mungkin terganggu.")
+             pass 
+
 except Exception as e:
-    st.error(f"❌ Gagal menginisialisasi Firebase Admin SDK dari secrets. Error: {e}")
+    st.error(f"❌ Gagal menginisialisasi Firebase. Error: {e}")
     st.stop()
 
 
