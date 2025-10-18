@@ -1,6 +1,8 @@
 streamlit
 pandas
 altair
-pyrebase
 firebase-admin
+pyrebase
+requests==2.27.1  # Gunakan versi yang diketahui kompatibel
+urllib3==1.26.15 # Versi yang sesuai dengan requests 2.27.1
 pycryptodome
