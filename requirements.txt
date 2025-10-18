@@ -3,7 +3,7 @@ pandas
 altair
 firebase-admin
 pyrebase
+pycryptodome
 requests==2.27.1
 urllib3==1.26.15
-pycryptodome
-requests-toolbelt==0.9.1  # Memaksa versi yang lebih lama dan mungkin kompatibel
+requests-toolbelt==0.9.1
