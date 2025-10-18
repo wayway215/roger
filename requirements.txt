@@ -1,9 +1,2 @@
 streamlit
-pandas
-altair
-firebase-admin
-pyrebase
-pycryptodome
-requests==2.27.1
-urllib3==1.26.15
-requests-toolbelt==0.9.1
+requests
