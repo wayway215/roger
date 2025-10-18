@@ -3,3 +3,4 @@ pandas
 altair
 pyrebase
 firebase-admin
+pycryptodome
