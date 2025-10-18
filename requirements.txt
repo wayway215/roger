@@ -1,7 +1,5 @@
-streamlit
-import streamlit as st                                                  
-import pandas as pd                                                     
-import altair as alt                                                    
-import pyrebase                                                         
-from datetime import datetime, time, date                               
-import os  
+streamlit                                                 
+pandas                                                      
+altair                                                     
+pyrebase   from datetime import datetime, time, date                               
+os  
